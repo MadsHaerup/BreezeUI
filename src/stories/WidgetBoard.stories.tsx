@@ -1,19 +1,31 @@
-import './App.css';
-import Widget from './components/widget/index';
-import { useTheme } from './hooks/useTheme';
+import type { Meta, StoryObj } from '@storybook/react';
+import Widget from '../components/widget/index';
 
-function App() {
-	const { theme, toggleTheme } = useTheme();
-	return (
-		<main
-			className="rounded-xl p-8 dark:bg-slate-800 w-screen h-screen"
-			style={{ backgroundColor: theme.backgroundColor, color: theme.textColor }}
-		>
-			{/* <p tailwindCSSName="text-xl font-medium">Breeze UI</p>
-			<p>It's never been easier!</p>
-			<Widget.Item />
-			<button onClick={() => toggleTheme()}>Toggle</button> */}
-			<Widget.Board>
+const meta = {
+	title: 'BreezeUI/Widget Board',
+	component: Widget.Board,
+	tags: ['autodocs'],
+	parameters: {
+		layout: 'fullscreen',
+	},
+} satisfies Meta<typeof Widget.Board>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// This story uses a render function to fully control how the component renders.
+export const OneItem: Story = {
+	render: args => <Widget.Board>{args.children}</Widget.Board>,
+	args: {
+		children: <Widget.Item tailwindCSS="bg-gray-200">Item</Widget.Item>,
+	},
+};
+
+export const ManyItems: Story = {
+	render: args => <Widget.Board>{args.children}</Widget.Board>,
+	args: {
+		children: [
+			<>
 				<Widget.Item tailwindCSS="sm:col-span-2 sm:row-span-2 bg-gray-200">Item 1</Widget.Item>
 				<Widget.Item tailwindCSS="bg-gray-200">Item 2</Widget.Item>
 				<Widget.Item tailwindCSS="bg-gray-200">Item 3</Widget.Item>
@@ -29,9 +41,7 @@ function App() {
 				<Widget.Item tailwindCSS="sm:col-span-3 bg-gray-200">Item 13</Widget.Item>
 				<Widget.Item tailwindCSS="bg-gray-200">Item 14</Widget.Item>
 				<Widget.Item tailwindCSS="bg-gray-200">Item 15</Widget.Item>
-			</Widget.Board>
-		</main>
-	);
-}
-
-export default App;
+			</>,
+		],
+	},
+};
