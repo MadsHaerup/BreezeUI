@@ -12,7 +12,6 @@ export const WidgetBoard = (props: BoardProps): ReactElement<HTMLDivElement> => 
 				'grid grid-cols-1 grid-rows-1 sm:grid-cols-autofit w-full grid-flow-dense gap-4',
 				props.tailwindCSS,
 			].join(' ')}
-			// {...props}
 		>
 			{props.children}
 		</div>
