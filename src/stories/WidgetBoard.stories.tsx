@@ -14,25 +14,29 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // This story uses a render function to fully control how the component renders.
-export const OneItem: Story = {
+export const OneWidget: Story = {
 	render: args => <Widget.Board>{args.children}</Widget.Board>,
 	args: {
 		children: <Widget.Item>Item</Widget.Item>,
 	},
 };
 
-export const ManyItems: Story = {
+export const ManyWidgets: Story = {
 	render: args => <Widget.Board>{args.children}</Widget.Board>,
 	args: {
 		children: [
 			<>
-				<Widget.Item tailwindCSS="sm:col-span-2 sm:row-span-2">Item 1</Widget.Item>
+				<Widget.Image backgroundImage="src/stories/assets/colors.svg" tailwindCSS="sm:col-span-2 sm:row-span-2">
+					Item 1
+				</Widget.Image>
 				<Widget.Item>Item 2</Widget.Item>
 				<Widget.Item>Item 3</Widget.Item>
 				<Widget.Item>Item 4</Widget.Item>
 				<Widget.Item>Item 5</Widget.Item>
 				<Widget.Item tailwindCSS="sm:col-span-2">Item 6</Widget.Item>
-				<Widget.Item tailwindCSS="sm:col-span-2 sm:row-span-2">Item 7</Widget.Item>
+				<Widget.Image backgroundImage="src/stories/assets/colors.svg" filter tailwindCSS="sm:col-span-2 sm:row-span-2">
+					Item 7
+				</Widget.Image>
 				<Widget.Item>Item 8</Widget.Item>
 				<Widget.Item>Item 9</Widget.Item>
 				<Widget.Item>Item 10</Widget.Item>
