@@ -3,8 +3,7 @@ import { light, dark } from '../theme/themes';
 
 export interface ThemeContextProps {
 	theme: {
-		backgroundColor: string;
-		textColor: string;
+		mode: string;
 	};
 	toggleTheme: () => void;
 }

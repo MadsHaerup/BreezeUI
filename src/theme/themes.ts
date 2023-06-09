@@ -1,9 +1,7 @@
 export const light = {
-	backgroundColor: '#fff',
-	textColor: '#000',
+	mode: 'text-slate-900 bg-slate-100',
 };
 
 export const dark = {
-	backgroundColor: '#000',
-	textColor: '#fff',
+	mode: 'text-slate-200 bg-neutral-950',
 };
