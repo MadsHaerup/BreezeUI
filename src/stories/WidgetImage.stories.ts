@@ -7,7 +7,7 @@ const meta = {
 	tags: ['autodocs'],
 	argTypes: {},
 	parameters: {
-		layout: 'fullscreen',
+		layout: 'centered',
 	},
 } satisfies Meta<typeof Widget.Image>;
 
@@ -18,6 +18,7 @@ export const Original: Story = {
 	args: {
 		filter: false,
 		backgroundImage: 'src/stories/assets/colors.svg',
+		tailwindCSS: 'h-80 w-80',
 	},
 };
 
@@ -25,5 +26,6 @@ export const Filter: Story = {
 	args: {
 		filter: true,
 		backgroundImage: 'src/stories/assets/colors.svg',
+		tailwindCSS: 'h-80 w-80',
 	},
 };

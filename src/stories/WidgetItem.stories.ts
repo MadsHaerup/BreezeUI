@@ -8,7 +8,7 @@ const meta = {
 	tags: ['autodocs'],
 	argTypes: {},
 	parameters: {
-		layout: 'fullscreen',
+		layout: 'centered',
 	},
 } satisfies Meta<typeof Widget.Item>;
 
@@ -16,5 +16,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	args: {},
+	args: {
+		tailwindCSS: 'h-80 w-80',
+	},
 };
