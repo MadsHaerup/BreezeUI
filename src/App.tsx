@@ -4,15 +4,12 @@ import { useTheme } from './hooks/useTheme';
 
 function App() {
 	const { theme, toggleTheme } = useTheme();
+
 	return (
-		<main
-			className="rounded-xl p-8 dark:bg-slate-800 w-screen h-screen"
-			style={{ backgroundColor: theme.backgroundColor, color: theme.textColor }}
-		>
-			{/* <p tailwindCSSName="text-xl font-medium">Breeze UI</p>
+		<main className={`${theme.mode} rounded-xl p-8 w-screen h-screen`}>
+			<p className="text-xl font-medium">Breeze UI</p>
 			<p>It's never been easier!</p>
-			<Widget.Item />
-			<button onClick={() => toggleTheme()}>Toggle</button> */}
+			<button onClick={() => toggleTheme()}>Toggle</button>
 			<Widget.Board>
 				<Widget.Item tailwindCSS="sm:col-span-2 sm:row-span-2">Item 1</Widget.Item>
 				<Widget.Item>Item 2</Widget.Item>
