@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Widget from '../components/widget/index';
 
 const meta = {
-	title: 'BreezeUI/Widget Board',
+	title: 'Widget/Widget Board',
 	component: Widget.Board,
 	tags: ['autodocs'],
 	parameters: {
