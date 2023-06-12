@@ -17,7 +17,6 @@ export default meta;
 type Story = StoryObj<typeof Toast>;
 
 const ToastWithHooks = (...args: any[]) => {
-	console.log(args);
 	const [showToast, toasts, setToasts] = useToast();
 
 	const handleButtonClick = () => {

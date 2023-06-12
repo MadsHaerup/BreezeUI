@@ -4,9 +4,11 @@ import { useTheme } from './hooks/useTheme';
 import Widget from './components/widget';
 import useToast from './hooks/useToast';
 import { Toast } from './components/toast/Toast';
+import Skeleton from './components/skeleton/Skeleton';
+import SkeletonItem from './components/skeleton/SkeletonItem';
 
 function App() {
-	const { currentTheme, theme, toggleTheme } = useTheme();
+	const { currentTheme, toggleTheme } = useTheme();
 	console.log(currentTheme);
 
 	const [showToast, toasts, setToasts] = useToast();
@@ -35,6 +37,16 @@ function App() {
 				height="h-80"
 				width="w-80"
 			/>
+
+			<>
+				<Skeleton tailwindCSS="bg-white rounded">
+					<>
+						{Array.from({ length: 4 }).map((_, i) => (
+							<SkeletonItem width="w-full" height="h-8" key={i} />
+						))}
+					</>
+				</Skeleton>
+			</>
 
 			<div>
 				<button onClick={handleButtonClick}>Show Toast</button>
