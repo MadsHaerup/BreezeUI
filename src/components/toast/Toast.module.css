@@ -1,5 +1,5 @@
 .toastHeading {
-	@apply flex gap-1 mb-1;
+	@apply flex gap-1 mb-1 drop-shadow-md;
 }
 .toast {
 	@apply rounded px-4 py-2 fixed;
