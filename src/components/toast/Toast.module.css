@@ -1,0 +1,44 @@
+.toastHeading {
+	@apply flex gap-1 mb-1 drop-shadow-md;
+}
+.toast {
+	@apply rounded px-4 py-2 fixed;
+}
+.toast--success {
+	@apply bg-emerald-500;
+}
+.toast--error {
+	@apply bg-red-500;
+}
+.toast--warning {
+	@apply bg-orange-500;
+}
+.toast--info {
+	@apply bg-blue-500;
+}
+
+.toast--top-right {
+	@apply top-[2%] right-[2%];
+}
+.toast--top-left {
+	@apply top-[2%] left-[2%];
+}
+.toast--top-center {
+	@apply top-[2%] left-1/2;
+	transform: translate(-50%, 0%);
+}
+
+.toast--bottom-right {
+	@apply bottom-[2%] right-[2%];
+}
+.toast--bottom-center {
+	@apply bottom-[2%] left-1/2;
+	transform: translate(-50%, 0%);
+}
+.toast--bottom-left {
+	@apply bottom-[2%] left-[2%];
+}
+
+.closeButton {
+	@apply absolute top-[2%] right-[2%];
+}

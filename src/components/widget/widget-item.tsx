@@ -4,16 +4,26 @@ export interface ItemProps {
 	onClick?: () => void;
 	children?: React.ReactNode;
 	tailwindCSS?: string;
+	style?: React.CSSProperties;
+	height?: string;
+	width?: string;
 }
 
-export const WidgetItem = (props: ItemProps): ReactElement<HTMLDivElement> => {
+export const WidgetItem = ({
+	onClick,
+	children,
+	tailwindCSS,
+	style,
+	height = 'h-full',
+	width = 'w-full',
+}: ItemProps): ReactElement<HTMLDivElement> => {
 	return (
 		<div
-			onClick={props.onClick}
-			className={['animated-hover-y1 theme-gradient widget ', props.tailwindCSS].join(' ')}
-			{...props}
+			onClick={onClick}
+			className={['animated-hover-y1 theme-gradient widget ', height, width, tailwindCSS].join(' ')}
+			style={{ ...style }}
 		>
-			{props.children}
+			{children}
 		</div>
 	);
 };

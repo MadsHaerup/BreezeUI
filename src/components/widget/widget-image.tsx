@@ -2,28 +2,40 @@ import { ReactElement } from 'react';
 
 export interface ImageProps {
 	filter?: boolean;
-	backgroundImage: string;
+	backgroundImage?: string;
 	onClick?: () => void;
 	children?: React.ReactNode;
 	tailwindCSS?: string;
+	style?: React.CSSProperties;
+	height?: string;
+	width?: string;
 }
 
-export const WidgetImage = (props: ImageProps): ReactElement<HTMLDivElement> => {
-	const mode = props.filter ? 'grayscale' : 'grayscale-0';
+export const WidgetImage = ({
+	filter,
+	backgroundImage,
+	onClick,
+	children,
+	tailwindCSS,
+	style,
+	height = 'h-full',
+	width = 'w-full',
+}: ImageProps): ReactElement<HTMLDivElement> => {
+	const mode = filter ? 'grayscale' : 'grayscale-0';
 
 	return (
 		<div
-			onClick={props.onClick}
-			className={['animated-hover-y1 theme-gradient widget', mode, props.tailwindCSS].join(' ')}
-			{...props}
+			onClick={onClick}
+			className={['animated-hover-y1 theme-gradient widget', mode, height, width, tailwindCSS].join(' ')}
+			style={{ ...style }}
 		>
 			<div
 				className="bg-image-contain"
 				style={{
-					backgroundImage: `url(${props.backgroundImage})`,
+					backgroundImage: `url(${backgroundImage})`,
 				}}
 			>
-				{props.children}
+				{children}
 			</div>
 		</div>
 	);
