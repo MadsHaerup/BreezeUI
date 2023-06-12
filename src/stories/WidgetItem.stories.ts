@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Widget from '../components/widget/index';
 
 const meta = {
-	title: 'Widget/Widget Item',
+	title: 'Components/Widget/Widget Item',
 	component: Widget.Item,
 
 	tags: ['autodocs'],
@@ -17,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		tailwindCSS: 'h-80 w-80',
+		height: 'h-80',
+		width: 'w-80',
 	},
 };

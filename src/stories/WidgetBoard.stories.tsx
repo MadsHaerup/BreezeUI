@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Widget from '../components/widget/index';
 
 const meta = {
-	title: 'Widget/Widget Board',
+	title: 'Components/Widget/Widget Board',
 	component: Widget.Board,
 	tags: ['autodocs'],
 	parameters: {
@@ -17,7 +17,11 @@ type Story = StoryObj<typeof meta>;
 export const OneWidget: Story = {
 	render: args => <Widget.Board>{args.children}</Widget.Board>,
 	args: {
-		children: <Widget.Item>Item</Widget.Item>,
+		children: (
+			<Widget.Item height="h-80" width="w-80">
+				Item
+			</Widget.Item>
+		),
 	},
 };
 

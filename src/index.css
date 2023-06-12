@@ -22,11 +22,47 @@
 	@apply transition ease-in-out delay-150 hover:-translate-y-1 duration-300;
 }
 .widget {
-	@apply h-full w-full rounded-lg p-4 drop-shadow-md;
+	@apply rounded-lg p-4 drop-shadow-md;
 }
 .responsive-grid-container {
 	@apply grid grid-cols-1 grid-rows-1 sm:grid-cols-autofit w-full grid-flow-dense gap-4;
 }
 .bg-image-contain {
 	@apply object-cover bg-no-repeat bg-contain bg-center w-full h-full;
+}
+
+@keyframes slide-in-top {
+	from {
+		transform: translateY(-100%) translateX(-50%);
+	}
+	30% {
+		transform: translateY(10px) translateX(-50%);
+	}
+	65% {
+		transform: translateY(-5px) translateX(-50%);
+	}
+	85% {
+		transform: translateY(2px) translateX(-50%);
+	}
+	to {
+		transform: translateY(0px) translateX(-50%);
+	}
+}
+
+@keyframes slide-in-bottom {
+	from {
+		transform: translateY(100%) translateX(-50%);
+	}
+	30% {
+		transform: translateY(-10px) translateX(-50%);
+	}
+	65% {
+		transform: translateY(5px) translateX(-50%);
+	}
+	85% {
+		transform: translateY(-2px) translateX(-50%);
+	}
+	to {
+		transform: translateY(0) translateX(-50%);
+	}
 }

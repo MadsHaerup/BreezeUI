@@ -2,10 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Widget from '../components/widget/index';
 
 const meta = {
-	title: 'Widget/Widget Image',
+	title: 'Components/Widget/Widget Image',
 	component: Widget.Image,
 	tags: ['autodocs'],
-	argTypes: {},
 	parameters: {
 		layout: 'centered',
 	},
@@ -18,7 +17,8 @@ export const Original: Story = {
 	args: {
 		filter: false,
 		backgroundImage: 'src/stories/assets/colors.svg',
-		tailwindCSS: 'h-80 w-80',
+		height: 'h-80',
+		width: 'w-80',
 	},
 };
 
@@ -26,6 +26,7 @@ export const Filter: Story = {
 	args: {
 		filter: true,
 		backgroundImage: 'src/stories/assets/colors.svg',
-		tailwindCSS: 'h-80 w-80',
+		height: 'h-80',
+		width: 'w-80',
 	},
 };
