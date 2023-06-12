@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { ThemeProvider } from './context/ThemeContext.tsx';
+import { theme } from './theme/themes.ts';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<ThemeProvider>
+		<ThemeProvider theme={theme}>
 			<App />
 		</ThemeProvider>
 	</React.StrictMode>

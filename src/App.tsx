@@ -6,7 +6,8 @@ import useToast from './hooks/useToast';
 import { Toast } from './components/toast/Toast';
 
 function App() {
-	const { theme, toggleTheme } = useTheme();
+	const { currentTheme, theme, toggleTheme } = useTheme();
+	console.log(currentTheme);
 
 	const [showToast, toasts, setToasts] = useToast();
 
@@ -23,7 +24,7 @@ function App() {
 	};
 
 	return (
-		<main className={`${theme.mode} rounded-xl p-8 w-screen h-screen`}>
+		<main className={`${currentTheme.style} rounded-xl p-8 w-screen h-screen`}>
 			<p className="text-xl font-medium">Breeze UI</p>
 			<p>It's never been easier!</p>
 			<button onClick={() => toggleTheme()}>Toggle</button>
