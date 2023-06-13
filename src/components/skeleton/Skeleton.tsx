@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Skeleton.module.css';
+import { useTheme } from '../../hooks/useTheme';
 
 interface SkeletonProps {
 	height?: string;
@@ -8,7 +9,23 @@ interface SkeletonProps {
 	children?: React.ReactNode;
 }
 const Skeleton: React.FC<SkeletonProps> = ({ height, width, tailwindCSS, children }) => {
-	return <div className={[styles.skeleton, height, width, tailwindCSS].join(' ')}>{children}</div>;
+	const { currentTheme } = useTheme();
+
+	return (
+		<div
+			className={[
+				styles.skeleton,
+				height,
+				width,
+				tailwindCSS,
+				`${
+					currentTheme?.components?.skeleton ? currentTheme?.components?.widget?.style : 'bg-white dark:bg-neutral-900'
+				}`,
+			].join(' ')}
+		>
+			{children}
+		</div>
+	);
 };
 
 export default Skeleton;

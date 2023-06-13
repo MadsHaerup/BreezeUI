@@ -58,7 +58,7 @@ export const Primary: Story = {
 		status: 'success',
 		duration: 9000,
 		isClosable: true,
-		position: 'top-right',
+		position: 'top-center',
 	},
 	render: args => <ToastWithHooks {...args} />,
 };

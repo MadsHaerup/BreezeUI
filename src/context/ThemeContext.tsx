@@ -1,16 +1,29 @@
 import React, { createContext, useEffect, useState } from 'react';
 
+export interface ComponentProps {
+	style?: string;
+}
+
 export interface ThemeContextProps {
 	theme: {
 		light: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 		dark: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 	};
 	currentTheme: {
-		style: string;
+		baseStyle: string;
+		components: {
+			[key: string]: ComponentProps;
+		};
 	};
 	toggleTheme: () => void;
 }
@@ -18,14 +31,17 @@ export interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps>({
 	theme: {
 		light: {
-			style: '',
+			baseStyle: '',
+			components: {},
 		},
 		dark: {
-			style: '',
+			baseStyle: '',
+			components: {},
 		},
 	},
 	currentTheme: {
-		style: '',
+		baseStyle: '',
+		components: {},
 	},
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	toggleTheme: () => {},
@@ -34,10 +50,16 @@ export const ThemeContext = createContext<ThemeContextProps>({
 interface ThemeProviderProps {
 	theme: {
 		light: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 		dark: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 	};
 	children: React.ReactNode;

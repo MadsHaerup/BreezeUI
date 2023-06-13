@@ -6,11 +6,10 @@ import useToast from './hooks/useToast';
 import { Toast } from './components/toast/Toast';
 import Skeleton from './components/skeleton/Skeleton';
 import SkeletonItem from './components/skeleton/SkeletonItem';
+import SkeletonCard from './components/skeleton/SkeletonCard';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
-	console.log(currentTheme);
-
 	const [showToast, toasts, setToasts] = useToast();
 
 	const handleButtonClick = () => {
@@ -26,7 +25,7 @@ function App() {
 	};
 
 	return (
-		<main className={`${currentTheme.style} rounded-xl p-8 w-screen h-screen`}>
+		<main className={`${currentTheme.baseStyle} rounded-xl p-8 w-screen h-screen`}>
 			<p className="text-xl font-medium">Breeze UI</p>
 			<p>It's never been easier!</p>
 			<button onClick={() => toggleTheme()}>Toggle</button>
@@ -38,15 +37,7 @@ function App() {
 				width="w-80"
 			/>
 
-			<>
-				<Skeleton tailwindCSS="bg-white rounded">
-					<>
-						{Array.from({ length: 4 }).map((_, i) => (
-							<SkeletonItem width="w-full" height="h-8" key={i} />
-						))}
-					</>
-				</Skeleton>
-			</>
+			<SkeletonCard />
 
 			<div>
 				<button onClick={handleButtonClick}>Show Toast</button>

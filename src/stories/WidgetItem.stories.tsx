@@ -15,9 +15,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Primary: Story = {
 	args: {
 		height: 'h-80',
 		width: 'w-80',
+		tailwindCSS:
+			'bg-gradient-to-r from-white to-slate-100 dark:bg-gradient-to-r dark:from-neutral-900 dark:to-zinc-800;',
 	},
+	render: args => <Widget.Item {...args} />,
 };
