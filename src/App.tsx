@@ -1,12 +1,11 @@
 import './App.css';
-// import Widget from './components/widget/index';
 import { useTheme } from './hooks/useTheme';
 import Widget from './components/widget';
 import useToast from './hooks/useToast';
 import { Toast } from './components/toast/Toast';
-import Skeleton from './components/skeleton/Skeleton';
-import SkeletonItem from './components/skeleton/SkeletonItem';
 import SkeletonCard from './components/skeleton/SkeletonCard';
+import GridContainer from './components/grid/GridContainer';
+import { GridItem } from './components/grid/GridItem';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
@@ -36,6 +35,30 @@ function App() {
 				height="h-80"
 				width="w-80"
 			/>
+
+			<GridContainer gap={8}>
+				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
+					Item 1
+				</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 2</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 3</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 4</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 5</GridItem>
+				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2">
+					Item 6
+				</GridItem>
+				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
+					Item 7
+				</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 8</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 9</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 10</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 11</GridItem>
+				<GridItem tailwindCSS="bg-white">Item 12</GridItem>
+				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-3">
+					Item 13
+				</GridItem>
+			</GridContainer>
 
 			<SkeletonCard />
 
