@@ -17,7 +17,7 @@ function App() {
 			title: 'Account Created',
 			description: "We've created your account for you.",
 			status: 'success',
-			duration: 9000,
+			duration: 8000,
 			isClosable: true,
 			position: 'bottom-right',
 		});
