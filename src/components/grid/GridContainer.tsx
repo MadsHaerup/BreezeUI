@@ -6,13 +6,13 @@ export interface GridContainerProps {
 	fit?: 'autofit' | 'stacked';
 }
 
-const GridContainer = ({ children, gap = 8, fit = 'autofit' }: GridContainerProps) => {
+const GridContainer = ({ children, gap = 2, fit = 'autofit' }: GridContainerProps) => {
 	return (
 		<div
-			style={{ gridGap: gap + 'px' }}
 			className={[
 				`${styles.gridContainer}`,
 				`${fit == 'autofit' ? 'sm:grid-cols-autofit' : 'grid-cols-1 grid-rows-1'}`,
+				`gap-${gap}`,
 			].join(' ')}
 		>
 			{children}

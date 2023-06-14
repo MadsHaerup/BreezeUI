@@ -6,6 +6,7 @@ import { Toast } from './components/toast/Toast';
 import SkeletonCard from './components/skeleton/SkeletonCard';
 import GridContainer from './components/grid/GridContainer';
 import { GridItem } from './components/grid/GridItem';
+import Spacer from './components/spacer/Spacer';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
@@ -28,15 +29,19 @@ function App() {
 			<p className="text-xl font-medium">Breeze UI</p>
 			<p>It's never been easier!</p>
 			<button onClick={() => toggleTheme()}>Toggle</button>
-
+			<Spacer x={8}>
+				<div style={{ height: '50px', width: '200px', backgroundColor: 'white' }}>01</div>
+				<div style={{ height: '50px', width: '200px', backgroundColor: 'white' }}>02</div>
+				<div style={{ height: '50px', width: '200px', backgroundColor: 'white' }}>03</div>
+			</Spacer>
+			,
 			<Widget.Item
 				style={{ backgroundColor: '#1C1C1E' }}
 				tailwindCSS="hover:rounded-xl h-80 w-80"
 				height="h-80"
 				width="w-80"
 			/>
-
-			<GridContainer gap={8}>
+			<GridContainer gap={2}>
 				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
 					Item 1
 				</GridItem>
@@ -59,9 +64,7 @@ function App() {
 					Item 13
 				</GridItem>
 			</GridContainer>
-
 			<SkeletonCard />
-
 			<div>
 				<button onClick={handleButtonClick}>Show Toast</button>
 				{toasts.map(toast => (

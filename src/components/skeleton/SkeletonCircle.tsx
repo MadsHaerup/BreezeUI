@@ -5,12 +5,26 @@ export interface SkeletonCircleProps {
 	tailwindCSS?: string;
 }
 const SkeletonCircle = ({ size = 'md', tailwindCSS }: SkeletonCircleProps) => {
-	const circleSize = size == 'sm' ? '12' : size == 'md' ? '16' : size == 'lg' ? '20' : ' ';
+	let circleSize;
+
+	switch (size) {
+		case 'sm':
+			circleSize = '12';
+			break;
+		case 'md':
+			circleSize = '16';
+			break;
+		case 'lg':
+			circleSize = '20';
+			break;
+		default:
+			circleSize = ' ';
+	}
 	return (
 		<SkeletonItem
-			width={'w-' + circleSize}
-			height={'h-' + circleSize}
-			tailwindCSS={`${'rounded-full'} ${tailwindCSS}`}
+			width={`w-${circleSize}`}
+			height={`h-${circleSize}`}
+			tailwindCSS={`${'rounded-full'} ${tailwindCSS} w-${circleSize} h-${circleSize}`}
 		/>
 	);
 };

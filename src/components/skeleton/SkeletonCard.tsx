@@ -5,14 +5,13 @@ import SkeletonItem from './SkeletonItem';
 export interface SkeletonCardProps {
 	rows?: number;
 	size?: 'sm' | 'md' | 'lg';
-	tailwindCSS?: string;
 }
 
-const SkeletonCard = ({ rows = 4, size = 'md', tailwindCSS }: SkeletonCardProps) => {
+const SkeletonCard = ({ rows = 4, size = 'md' }: SkeletonCardProps) => {
 	return (
 		<Skeleton>
 			<div className="flex items-center">
-				<SkeletonCircle size={size} tailwindCSS={tailwindCSS} />
+				<SkeletonCircle size={size} tailwindCSS="mb-4 mr-2" />
 				<SkeletonItem tailwindCSS="rounded-md" width="w-14" height="h-2" />
 			</div>
 			{Array.from({ length: rows }).map((_, i) => (

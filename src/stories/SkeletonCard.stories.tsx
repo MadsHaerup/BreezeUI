@@ -19,7 +19,6 @@ type Story = StoryObj<typeof meta>;
 export const Card: Story = {
 	args: {
 		size: 'md',
-		tailwindCSS: 'mb-4 mr-2',
 		rows: 5,
 	},
 };

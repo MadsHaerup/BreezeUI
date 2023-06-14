@@ -21,7 +21,7 @@ export const Stacked: Story = {
 		</GridContainer>
 	),
 	args: {
-		gap: 8,
+		gap: 4,
 		fit: 'stacked',
 		children: [
 			<>
@@ -50,7 +50,7 @@ export const AutoFit: Story = {
 		</GridContainer>
 	),
 	args: {
-		gap: 8,
+		gap: 4,
 		fit: 'autofit',
 		children: [
 			<>
@@ -75,7 +75,7 @@ export const AutoFit: Story = {
 export const SpanningColumns: Story = {
 	render: args => <GridContainer gap={args.gap}>{args.children}</GridContainer>,
 	args: {
-		gap: 8,
+		gap: 4,
 		children: [
 			<>
 				<GridItem tailwindCSS="bg-neutral-500" colSpan="sm:col-span-2" rowSpan="sm:row-span-3">
