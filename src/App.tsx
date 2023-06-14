@@ -7,6 +7,7 @@ import SkeletonCard from './components/skeleton/SkeletonCard';
 import GridContainer from './components/grid/GridContainer';
 import { GridItem } from './components/grid/GridItem';
 import Spacer from './components/spacer/Spacer';
+import Divider from './components/divider/Divider';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
@@ -26,9 +27,17 @@ function App() {
 
 	return (
 		<main className={`${currentTheme.baseStyle} rounded-xl p-8 w-screen h-screen`}>
-			<p className="text-xl font-medium">Breeze UI</p>
-			<p>It's never been easier!</p>
 			<button onClick={() => toggleTheme()}>Toggle</button>
+			<div className="flex justify-center py-4">
+				<div className="w-1/2 mr-4">
+					<Divider orientation="horizontal" spacing={4} />
+				</div>
+
+				<div className="w-1/2 flex">
+					<Divider orientation="vertical" spacing={4} />
+					<p className="pl-4">HEY</p>
+				</div>
+			</div>
 			<Spacer x={8}>
 				<div style={{ height: '50px', width: '200px', backgroundColor: 'white' }}>01</div>
 				<div style={{ height: '50px', width: '200px', backgroundColor: 'white' }}>02</div>

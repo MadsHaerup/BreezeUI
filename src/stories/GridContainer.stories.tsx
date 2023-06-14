@@ -25,19 +25,19 @@ export const Stacked: Story = {
 		fit: 'stacked',
 		children: [
 			<>
-				<GridItem tailwindCSS="bg-neutral-500">Item 1</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 2</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 3</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 4</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 5</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 6</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 7</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 8</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 9</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 10</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 11</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 12</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 13</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 1</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 2</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 3</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 4</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 5</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 6</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 7</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 8</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 9</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 10</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 11</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 12</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 13</GridItem>
 			</>,
 		],
 	},
@@ -54,19 +54,19 @@ export const AutoFit: Story = {
 		fit: 'autofit',
 		children: [
 			<>
-				<GridItem tailwindCSS="bg-neutral-500">Item 1</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 2</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 3</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 4</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 5</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 6</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 7</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 8</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 9</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 10</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 11</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 12</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 13</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 1</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 2</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 3</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 4</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 5</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 6</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 7</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 8</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 9</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 10</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 11</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 12</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 13</GridItem>
 			</>,
 		],
 	},
@@ -78,25 +78,25 @@ export const SpanningColumns: Story = {
 		gap: 4,
 		children: [
 			<>
-				<GridItem tailwindCSS="bg-neutral-500" colSpan="sm:col-span-2" rowSpan="sm:row-span-3">
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2" rowSpan="sm:row-span-3">
 					Item 1
 				</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 2</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 3</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 4</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 5</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500" colSpan="sm:col-span-2">
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 2</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 3</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 4</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 5</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2">
 					Item 6
 				</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
 					Item 7
 				</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 8</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 9</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 10</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 11</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500">Item 12</GridItem>
-				<GridItem tailwindCSS="bg-neutral-500" colSpan="sm:col-span-3">
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 8</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 9</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 10</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 11</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 12</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-3">
 					Item 13
 				</GridItem>
 			</>,
