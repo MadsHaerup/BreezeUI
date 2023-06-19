@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import SkeletonCircle from '../components/skeleton/SkeletonCircle';
 
 const meta = {
-	title: 'Components/Skeleton/SkeletonCircle',
+	title: 'Feedback/Skeleton/SkeletonCircle',
 	component: SkeletonCircle,
 	tags: ['autodocs'],
 	argTypes: {},

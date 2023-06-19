@@ -2,6 +2,8 @@
 export default {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	safelist: [
+		'block',
+		'hidden',
 		{ pattern: /^gap-/ },
 		{ pattern: /^space-x-\d+$/ },
 		{ pattern: /^space-y-\d+$/ },
@@ -10,6 +12,7 @@ export default {
 		{ pattern: /^px-/ },
 		{ pattern: /^w-/ },
 		{ pattern: /^h-/ },
+		{ pattern: /^h/ },
 	],
 	darkMode: 'class',
 	theme: {

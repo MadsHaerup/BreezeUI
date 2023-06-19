@@ -4,7 +4,7 @@ import { GridItem } from '../components/grid/GridItem';
 import Divider from '../components/divider/Divider';
 
 const meta = {
-	title: 'Components/Divider/Divider',
+	title: 'Layout/Divider/Divider',
 	component: Divider,
 	tags: ['autodocs'],
 	parameters: {

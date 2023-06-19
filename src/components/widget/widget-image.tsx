@@ -38,7 +38,7 @@ export const WidgetImage = ({
 				`${styles.widget}`,
 				`${
 					currentTheme?.components?.widget
-						? currentTheme?.components?.widget?.style
+						? currentTheme?.components?.widget?.styleSheet?.style
 						: 'bg-gradient-to-r from-white to-slate-100 dark:bg-gradient-to-r dark:from-neutral-900 dark:to-zinc-800'
 				}`,
 			].join(' ')}

@@ -19,7 +19,9 @@ const Skeleton: React.FC<SkeletonProps> = ({ height, width, tailwindCSS, childre
 				width,
 				tailwindCSS,
 				`${
-					currentTheme?.components?.skeleton ? currentTheme?.components?.widget?.style : 'bg-white dark:bg-neutral-900'
+					currentTheme?.components?.skeleton?.styleSheet
+						? currentTheme?.components?.skeleton?.styleSheet?.style
+						: 'bg-white dark:bg-neutral-900'
 				}`,
 			].join(' ')}
 		>

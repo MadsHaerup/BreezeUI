@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Info from '../icons/Info';
 
 const meta: Meta<typeof Toast> = {
-	title: 'Components/Toast/Toast',
+	title: 'Feedback/Toast/Toast',
 	tags: ['autodocs'],
 	component: Toast,
 	parameters: {

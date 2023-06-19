@@ -8,6 +8,8 @@ import GridContainer from './components/grid/GridContainer';
 import { GridItem } from './components/grid/GridItem';
 import Spacer from './components/spacer/Spacer';
 import Divider from './components/divider/Divider';
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from './components/tabs/Tabs';
+import Pagination from './components/pagination/Pagination';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
@@ -24,10 +26,30 @@ function App() {
 			position: 'bottom-right',
 		});
 	};
-
+	// const showAlert = () => alert('hey');
 	return (
 		<main className={`${currentTheme.baseStyle} rounded-xl p-8 w-screen h-screen`}>
 			<button onClick={() => toggleTheme()}>Toggle</button>
+			<Pagination totalPages={20} initialPage={5} tabCount={5} />
+			<Tabs variant="enclosed">
+				<TabList>
+					<Tab>One</Tab>
+					<Tab>Two</Tab>
+					<Tab>Three</Tab>
+				</TabList>
+
+				<TabPanels>
+					<TabPanel>
+						<p>one!</p>
+					</TabPanel>
+					<TabPanel>
+						<p>two!</p>
+					</TabPanel>
+					<TabPanel>
+						<p>three!</p>
+					</TabPanel>
+				</TabPanels>
+			</Tabs>
 			<div className="flex justify-center py-4">
 				<div className="w-1/2 mr-4">
 					<Divider orientation="horizontal" spacing={4} />
@@ -51,25 +73,25 @@ function App() {
 				width="w-80"
 			/>
 			<GridContainer gap={2}>
-				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2" rowSpan="sm:row-span-3">
 					Item 1
 				</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 2</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 3</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 4</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 5</GridItem>
-				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2">
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 2</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 3</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 4</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 5</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2">
 					Item 6
 				</GridItem>
-				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-2" rowSpan="sm:row-span-2">
 					Item 7
 				</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 8</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 9</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 10</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 11</GridItem>
-				<GridItem tailwindCSS="bg-white">Item 12</GridItem>
-				<GridItem tailwindCSS="bg-white" colSpan="sm:col-span-3">
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 8</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 9</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 10</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 11</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4">Item 12</GridItem>
+				<GridItem tailwindCSS="bg-slate-500 p-4" colSpan="sm:col-span-3">
 					Item 13
 				</GridItem>
 			</GridContainer>

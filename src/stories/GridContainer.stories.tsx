@@ -3,7 +3,7 @@ import GridContainer from '../components/grid/GridContainer';
 import { GridItem } from '../components/grid/GridItem';
 
 const meta = {
-	title: 'Components/Grid/Grid Container',
+	title: 'Layout/Grid/Container',
 	component: GridContainer,
 	tags: ['autodocs'],
 	parameters: {
