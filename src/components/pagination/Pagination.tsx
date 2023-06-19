@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '../../hooks/useTheme';
+import { defaultBgTextScheme } from '../../helper/colorScheme';
 interface Props {
 	totalPages: number;
 	initialPage?: number;
@@ -11,7 +12,7 @@ const Pagination: React.FC<Props> = ({ totalPages, initialPage = 1, tabCount = 5
 
 	const colorScheme = currentTheme.components.pagination.styleSheet
 		? currentTheme.components.pagination.styleSheet.style
-		: 'bg-white text-gray-700 dark:text-slate-100 dark:bg-zinc-500';
+		: defaultBgTextScheme;
 
 	const activeColor = currentTheme.components.pagination.styleSheet
 		? currentTheme.components.pagination.styleSheet.active

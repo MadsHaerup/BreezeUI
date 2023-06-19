@@ -4,6 +4,7 @@ export default {
 	safelist: [
 		'block',
 		'hidden',
+		{ pattern: /^grid-cols-\d+$/ },
 		{ pattern: /^gap-/ },
 		{ pattern: /^space-x-\d+$/ },
 		{ pattern: /^space-y-\d+$/ },

@@ -16,12 +16,12 @@ type Story = StoryObj<typeof meta>;
 export const AllHeadings: Story = {
 	render: args => (
 		<>
-			<Heading level={args.level}>Main Heading</Heading>
-			<Heading level={2}>Subheading 1</Heading>
-			<Heading level={3}>Subheading 2</Heading>
-			<Heading level={4}>Subheading 3</Heading>
-			<Heading level={5}>Subheading 4</Heading>
-			<Heading level={6}>Subheading 5</Heading>
+			<Heading level={args.level}>Main Heading 1</Heading>
+			<Heading level={2}>Subheading 2</Heading>
+			<Heading level={3}>Subheading 3</Heading>
+			<Heading level={4}>Subheading 4</Heading>
+			<Heading level={5}>Subheading 5</Heading>
+			<Heading level={6}>Subheading 6</Heading>
 		</>
 	),
 	args: {

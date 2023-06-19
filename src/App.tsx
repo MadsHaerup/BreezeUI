@@ -10,6 +10,12 @@ import Spacer from './components/spacer/Spacer';
 import Divider from './components/divider/Divider';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from './components/tabs/Tabs';
 import Pagination from './components/pagination/Pagination';
+import MagazineLayout from './components/layouts/BlogLayout';
+import Article from './components/article/Article';
+import FeaturedArticle from './components/article/FeaturedArticle';
+import BlogLayout from './components/layouts/BlogLayout';
+import { items } from './helper/data';
+import Masonry from './components/masonry/Masonry';
 
 function App() {
 	const { currentTheme, toggleTheme } = useTheme();
@@ -30,7 +36,62 @@ function App() {
 	return (
 		<main className={`${currentTheme.baseStyle} rounded-xl p-8 w-screen h-screen`}>
 			<button onClick={() => toggleTheme()}>Toggle</button>
-			<Pagination totalPages={20} initialPage={5} tabCount={5} />
+			<Masonry />
+			<BlogLayout
+				featured={
+					<FeaturedArticle
+						imgSrc="https://picsum.photos/800/300"
+						title="Lorem ipsum dolor sit amet"
+						buttonText="Read more"
+						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet consequat sem. Pellentesque vitae vulputate nulla, vel placerat nunc."
+					/>
+				}
+				articles={[
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+					<Article
+						imgSrc="https://picsum.photos/500/400"
+						title="Lorem ipsum dolor sit amet"
+						category="Category"
+						author="Author"
+						buttonText="Read more"
+					/>,
+				]}
+			/>
+			{/* <Pagination totalPages={20} initialPage={5} tabCount={5} />
 			<Tabs variant="enclosed">
 				<TabList>
 					<Tab>One</Tab>
@@ -110,7 +171,7 @@ function App() {
 						onClose={() => setToasts(currentToasts => currentToasts.filter(item => item.key !== toast.key))}
 					/>
 				))}
-			</div>
+			</div> */}
 		</main>
 	);
 }

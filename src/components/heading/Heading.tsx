@@ -3,9 +3,10 @@ import React from 'react';
 export interface HeadingProps {
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	children?: React.ReactNode;
+	tailwindCSS?: string;
 }
 
-const Heading = ({ level, children }: HeadingProps) => {
+const Heading = ({ level, children, tailwindCSS }: HeadingProps) => {
 	const fontSizeClasses = {
 		1: 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl',
 		2: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl',
@@ -17,7 +18,9 @@ const Heading = ({ level, children }: HeadingProps) => {
 
 	const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
 
-	return <HeadingTag className={`font-bold leading-tight ${fontSizeClasses[level]}`}>{children}</HeadingTag>;
+	return (
+		<HeadingTag className={`font-bold leading-tight ${tailwindCSS} ${fontSizeClasses[level]}`}>{children}</HeadingTag>
+	);
 };
 
 export default Heading;

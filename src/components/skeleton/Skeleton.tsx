@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Skeleton.module.css';
 import { useTheme } from '../../hooks/useTheme';
+import { defaultBgScheme } from '../../helper/colorScheme';
 
 interface SkeletonProps {
 	height?: string;
@@ -21,7 +22,7 @@ const Skeleton: React.FC<SkeletonProps> = ({ height, width, tailwindCSS, childre
 				`${
 					currentTheme?.components?.skeleton?.styleSheet
 						? currentTheme?.components?.skeleton?.styleSheet?.style
-						: 'bg-white dark:bg-neutral-900'
+						: defaultBgScheme
 				}`,
 			].join(' ')}
 		>
