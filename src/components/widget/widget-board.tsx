@@ -5,6 +5,6 @@ export interface BoardProps {
 	tailwindCSS?: string;
 }
 
-export const WidgetBoard = (props: BoardProps): ReactElement<HTMLDivElement> => {
-	return <div className={['responsive-grid-container', props.tailwindCSS].join(' ')}>{props.children}</div>;
+export const WidgetBoard = ({ tailwindCSS, children }: BoardProps): ReactElement<HTMLDivElement> => {
+	return <div className={['responsive-grid-container', tailwindCSS].join(' ')}>{children}</div>;
 };

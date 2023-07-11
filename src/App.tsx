@@ -1,56 +1,17 @@
 import './App.css';
-// import Widget from './components/widget/index';
 import { useTheme } from './hooks/useTheme';
-import Widget from './components/widget';
-import useToast from './hooks/useToast';
-import { Toast } from './components/toast/Toast';
+import Masonry from './components/masonry/Masonry';
+import { MasonFetcher } from './components/masonry/MasonFetch';
 
 function App() {
-	const { currentTheme, theme, toggleTheme } = useTheme();
-	console.log(currentTheme);
+	const { currentTheme, toggleTheme } = useTheme();
 
-	const [showToast, toasts, setToasts] = useToast();
-
-	const handleButtonClick = () => {
-		showToast({
-			key: Date.now(),
-			title: 'Account Created',
-			description: "We've created your account for you.",
-			status: 'success',
-			duration: 9000,
-			isClosable: true,
-			position: 'bottom-right',
-		});
-	};
+	const results = MasonFetcher();
 
 	return (
-		<main className={`${currentTheme.style} rounded-xl p-8 w-screen h-screen`}>
-			<p className="text-xl font-medium">Breeze UI</p>
-			<p>It's never been easier!</p>
+		<main className={`${currentTheme.baseStyle} rounded-xl p-8 w-screen`}>
 			<button onClick={() => toggleTheme()}>Toggle</button>
-
-			<Widget.Item
-				style={{ backgroundColor: '#1C1C1E' }}
-				tailwindCSS="hover:rounded-xl h-80 w-80"
-				height="h-80"
-				width="w-80"
-			/>
-
-			<div>
-				<button onClick={handleButtonClick}>Show Toast</button>
-				{toasts.map(toast => (
-					<Toast
-						key={toast.key}
-						title={toast.title}
-						description={toast.description}
-						status={toast.status}
-						duration={toast.duration}
-						isClosable={toast.isClosable}
-						position={toast.position}
-						onClose={() => setToasts(currentToasts => currentToasts.filter(item => item.key !== toast.key))}
-					/>
-				))}
-			</div>
+			<Masonry images={results} />
 		</main>
 	);
 }

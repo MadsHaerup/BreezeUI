@@ -19,6 +19,8 @@ export const Original: Story = {
 		backgroundImage: 'src/stories/assets/colors.svg',
 		height: 'h-80',
 		width: 'w-80',
+		tailwindCSS:
+			'bg-gradient-to-r from-white to-slate-100 dark:bg-gradient-to-r dark:from-neutral-900 dark:to-zinc-800;',
 	},
 };
 
@@ -28,5 +30,7 @@ export const Filter: Story = {
 		backgroundImage: 'src/stories/assets/colors.svg',
 		height: 'h-80',
 		width: 'w-80',
+		tailwindCSS:
+			'bg-gradient-to-r from-white to-slate-100 dark:bg-gradient-to-r dark:from-neutral-900 dark:to-zinc-800;',
 	},
 };

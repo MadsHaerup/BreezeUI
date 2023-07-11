@@ -13,19 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// This story uses a render function to fully control how the component renders.
-export const OneWidget: Story = {
-	render: args => <Widget.Board>{args.children}</Widget.Board>,
-	args: {
-		children: (
-			<Widget.Item height="h-80" width="w-80">
-				Item
-			</Widget.Item>
-		),
-	},
-};
-
-export const ManyWidgets: Story = {
+export const WidgetBoard: Story = {
 	render: args => <Widget.Board>{args.children}</Widget.Board>,
 	args: {
 		children: [

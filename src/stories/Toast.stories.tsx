@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Info from '../icons/Info';
 
 const meta: Meta<typeof Toast> = {
-	title: 'Components/Toast/Toast',
+	title: 'Feedback/Toast/Toast',
 	tags: ['autodocs'],
 	component: Toast,
 	parameters: {
@@ -17,7 +17,6 @@ export default meta;
 type Story = StoryObj<typeof Toast>;
 
 const ToastWithHooks = (...args: any[]) => {
-	console.log(args);
 	const [showToast, toasts, setToasts] = useToast();
 
 	const handleButtonClick = () => {
@@ -59,7 +58,7 @@ export const Primary: Story = {
 		status: 'success',
 		duration: 9000,
 		isClosable: true,
-		position: 'top-right',
+		position: 'top-center',
 	},
 	render: args => <ToastWithHooks {...args} />,
 };

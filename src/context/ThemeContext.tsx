@@ -1,16 +1,32 @@
 import React, { createContext, useEffect, useState } from 'react';
 
+export interface ComponentProps {
+	styleSheet?: {
+		style?: string;
+		active?: string;
+	};
+}
+
 export interface ThemeContextProps {
 	theme: {
 		light: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 		dark: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 	};
 	currentTheme: {
-		style: string;
+		baseStyle: string;
+		components: {
+			[key: string]: ComponentProps;
+		};
 	};
 	toggleTheme: () => void;
 }
@@ -18,14 +34,17 @@ export interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps>({
 	theme: {
 		light: {
-			style: '',
+			baseStyle: '',
+			components: {},
 		},
 		dark: {
-			style: '',
+			baseStyle: '',
+			components: {},
 		},
 	},
 	currentTheme: {
-		style: '',
+		baseStyle: '',
+		components: {},
 	},
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	toggleTheme: () => {},
@@ -34,36 +53,51 @@ export const ThemeContext = createContext<ThemeContextProps>({
 interface ThemeProviderProps {
 	theme: {
 		light: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 		dark: {
-			style: string;
+			baseStyle: string;
+			components: {
+				[key: string]: ComponentProps;
+			};
 		};
 	};
 	children: React.ReactNode;
+	initialTheme: 'light' | 'dark';
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
-	const [currentTheme, setCurrentTheme] = useState(theme.light);
-	useEffect(() => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme, initialTheme }) => {
+	const isInitialTheme = initialTheme === 'dark' ? theme.dark : theme.light;
+	const savedTheme = localStorage.getItem('theme');
+	const isTheme = savedTheme === 'dark' ? theme.dark : theme.light;
+	const themeObj = savedTheme ? isTheme : isInitialTheme;
+
+	const [currentTheme, setCurrentTheme] = useState(themeObj);
+
+	const [currentThemeStorage, setCurrentThemeStorage] = useState(() => {
 		const savedTheme = localStorage.getItem('theme');
-		if (savedTheme) {
-			const parsedTheme = JSON.parse(savedTheme);
-			setCurrentTheme(parsedTheme);
-			document.documentElement.classList.add('dark');
-		}
-	}, []);
+		return savedTheme ? savedTheme : initialTheme;
+	});
 
-	const toggleTheme = () => {
-		const newTheme = currentTheme === theme.light ? theme.dark : theme.light;
-		setCurrentTheme(newTheme);
-		localStorage.setItem('theme', JSON.stringify(newTheme));
+	useEffect(() => {
+		localStorage.setItem('theme', currentThemeStorage);
 
-		if (newTheme === theme.dark) {
+		if (currentThemeStorage === 'dark') {
 			document.documentElement.classList.add('dark');
+			document.documentElement.classList.remove('lightTheme');
 		} else {
 			document.documentElement.classList.remove('dark');
+			document.documentElement.classList.add('lightTheme');
 		}
+	}, [currentThemeStorage]);
+
+	const toggleTheme = () => {
+		const newTheme = currentThemeStorage === 'light' ? 'dark' : 'light';
+		setCurrentTheme(newTheme === 'dark' ? theme.dark : theme.light); // update currentTheme state
+		setCurrentThemeStorage(newTheme);
 	};
 
 	return <ThemeContext.Provider value={{ currentTheme, theme, toggleTheme }}>{children}</ThemeContext.Provider>;

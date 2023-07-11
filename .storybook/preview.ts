@@ -6,14 +6,9 @@ const preview: Preview = {
 		darkMode: {
 			defaultValue: true, // Enable dark mode by default on all stories
 		},
-	},
-	parameters: {
-		actions: { argTypesRegex: '^on[A-Z].*' },
-		controls: {
-			matchers: {
-				color: /(background|color)$/i,
-				date: /Date$/,
-			},
+		// Optional (Default: 'dark')
+		className: {
+			defaultValue: 'dark', // Set your custom dark mode class name
 		},
 	},
 };
