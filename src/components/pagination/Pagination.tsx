@@ -10,12 +10,12 @@ interface Props {
 const Pagination: React.FC<Props> = ({ totalPages, initialPage = 1, tabCount = 5, onPageChange }) => {
 	const { currentTheme } = useTheme();
 
-	const colorScheme = currentTheme.components.pagination.styleSheet
-		? currentTheme.components.pagination.styleSheet.style
+	const colorScheme = currentTheme?.components?.pagination?.styleSheet
+		? currentTheme?.components?.pagination?.styleSheet?.style
 		: defaultBgTextScheme;
 
-	const activeColor = currentTheme.components.pagination.styleSheet
-		? currentTheme.components.pagination.styleSheet.active
+	const activeColor = currentTheme?.components?.pagination?.styleSheet
+		? currentTheme?.components?.pagination?.styleSheet?.active
 		: ' font-bold';
 
 	const [activePage, setActivePage] = useState(initialPage);
@@ -63,19 +63,21 @@ const Pagination: React.FC<Props> = ({ totalPages, initialPage = 1, tabCount = 5
 			<div className="flex mt-10">
 				<button
 					onClick={() => handlePageChange(1)}
-					className={`px-4 py-2 border mx-2 ${colorScheme}  ${prevDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
-					disabled={prevDisabled}
-				>
-					First
-				</button>
-				<button
-					onClick={() => handlePageChange(activePage - 1)}
-					className={`px-4 py-2 border rounded-l-md ${colorScheme}  ${
+					className={`px-4 py-2 border rounded-l-md border-r-0 ${colorScheme}  ${
 						prevDisabled ? 'cursor-not-allowed opacity-50' : ''
 					}`}
 					disabled={prevDisabled}
 				>
 					&#171;
+				</button>
+				<button
+					onClick={() => handlePageChange(activePage - 1)}
+					className={`px-4 py-2  border-t border-b ${colorScheme}  ${
+						prevDisabled ? 'cursor-not-allowed opacity-50' : ''
+					}`}
+					disabled={prevDisabled}
+				>
+					&#8249;
 				</button>
 				<div className="flex">
 					{pages.map(page => (
@@ -90,21 +92,24 @@ const Pagination: React.FC<Props> = ({ totalPages, initialPage = 1, tabCount = 5
 						</button>
 					))}
 				</div>
+
 				<button
 					onClick={() => handlePageChange(activePage + 1)}
-					className={`px-4 py-2 border rounded-r-md ${colorScheme}  ${
+					className={`px-4 py-2 border-t border-b ${colorScheme}  ${
+						nextDisabled ? 'cursor-not-allowed opacity-50' : ''
+					}`}
+					disabled={nextDisabled}
+				>
+					&#8250;
+				</button>
+				<button
+					onClick={() => handlePageChange(totalPages)}
+					className={`px-4 py-2 border rounded-r-md border-l-0 ${colorScheme}  ${
 						nextDisabled ? 'cursor-not-allowed opacity-50' : ''
 					}`}
 					disabled={nextDisabled}
 				>
 					&#187;
-				</button>
-				<button
-					onClick={() => handlePageChange(totalPages)}
-					className={`px-4 py-2 border mx-2 ${colorScheme}  ${nextDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
-					disabled={nextDisabled}
-				>
-					Last
 				</button>
 			</div>
 		</div>
