@@ -1,0 +1,40 @@
+
+# Exclude development-specific files
+src/
+scripts/
+webpack.config.js
+babel.config.js
+vite.config.js
+.storybook/
+
+# Exclude build and output files
+dist/
+build/
+out/
+theme/
+
+# Exclude test files and directories
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Exclude documentation and demo files
+docs/
+examples/
+*.md
+*.pdf
+
+# Exclude version control files and directories
+.git/
+.gitignore
+
+# Exclude editor-specific files and directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Exclude other unnecessary files
+.DS_Store
+Thumbs.db
