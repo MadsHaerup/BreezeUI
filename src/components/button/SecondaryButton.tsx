@@ -9,9 +9,7 @@ interface ButtonProps {
 const SecondaryButton = ({ buttonText, buttonOnClick }: ButtonProps) => {
 	const { currentTheme } = useTheme();
 
-	const colorScheme = currentTheme.components.secondaryButton
-		? currentTheme?.components?.secondaryButton?.styleSheet?.style
-		: defaultSecondaryButtonScheme;
+	const colorScheme = currentTheme?.components?.secondaryButton?.styleSheet?.style ?? defaultSecondaryButtonScheme;
 
 	return (
 		<button

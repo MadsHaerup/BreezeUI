@@ -8,9 +8,7 @@ interface ButtonProps {
 const PrimaryButton = ({ buttonOnClick, buttonText }: ButtonProps) => {
 	const { currentTheme } = useTheme();
 
-	const colorScheme = currentTheme.components.primaryButton
-		? currentTheme?.components?.primaryButton?.styleSheet?.style
-		: defaultButtonScheme;
+	const colorScheme = currentTheme?.components?.primaryButton?.styleSheet?.style ?? defaultButtonScheme;
 
 	return (
 		<button className={`${colorScheme} font-bold py-2 px-4 rounded mt-8`} onClick={buttonOnClick}>
